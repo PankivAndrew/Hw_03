@@ -14,6 +14,7 @@ public class DHLDeliveryStrategy implements IDelivery {
         for (int i = 0; i < items.size(); i ++){
             str += items.get(i).getDescription();
         }
+        System.out.println("You bucket was delivered by DHL Delivery");
         System.out.println(str);
     }
 }

@@ -18,8 +18,6 @@ public class Main {
         Item itm = new FlowerBucket();
         Flower mak = new Flower("green", 12, true, 12.5, "poppy");
         bucket.addFlower(mak);
-        itm = new RibbonDecorator(itm);
-        itm = new PaperDecorator(itm);
         PaperDecorator paper = new PaperDecorator(bucket);
         RibbonDecorator ribbon = new RibbonDecorator(bucket);
         BasketDecorator basket = new BasketDecorator(bucket);
