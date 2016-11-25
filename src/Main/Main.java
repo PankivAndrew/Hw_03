@@ -1,12 +1,19 @@
+package Main;
+
 import Decorator.BasketDecorator;
 import Delivery.PostDeliveryStrategy;
+import Enums.FlowerColour;
+import Enums.FlowerType;
+import Flowers.Astrometry;
 import Flowers.Flower;
 import Flowers.FlowerBucket;
-import Decorator.Item;
 import Decorator.PaperDecorator;
 import Decorator.RibbonDecorator;
-import Payment.IPayment;
+import Flowers.Mayweed;
 import Payment.PayPalPaymentStrategy;
+import suppliers.AstromerySupplierObserver;
+
+import java.util.Arrays;
 
 /**
  * Created by Pankiv on 14.11.2016.
@@ -14,10 +21,10 @@ import Payment.PayPalPaymentStrategy;
 public class Main {
     public static void main(String [] args){
         FlowerBucket bucket = new FlowerBucket();
-
-        Item itm = new FlowerBucket();
-        Flower mak = new Flower("green", 12, true, 12.5, "poppy");
-        bucket.addFlower(mak);
+        Astrometry mayweed = new Astrometry(FlowerColour.GREEN, 12, true, 12.5, FlowerType.ASTROMETRY);
+        Flower mayweed1 = new Mayweed(FlowerColour.RED,25,true,15.50,FlowerType.MAYWEED);
+        bucket.addFlower(mayweed1);
+        bucket.addFlower(mayweed);
         PaperDecorator paper = new PaperDecorator(bucket);
         RibbonDecorator ribbon = new RibbonDecorator(bucket);
         BasketDecorator basket = new BasketDecorator(bucket);
@@ -25,9 +32,11 @@ public class Main {
         order.addItem(paper);
         order.addItem(ribbon);
         order.addItem(basket);
+        AstromerySupplierObserver sosat = new AstromerySupplierObserver(order);
         order.setDeliveryStrategy(new PostDeliveryStrategy());
         order.setPaymentStrategy(new PayPalPaymentStrategy());
         order.processOrder();
+
 
     }
 }

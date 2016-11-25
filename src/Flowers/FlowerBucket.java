@@ -19,8 +19,17 @@ public class FlowerBucket implements Item {
     }
 
     @Override
+    public int size() {
+        return insertIndex;
+    }
+
+
+    @Override
     public String getDescription() {
         return null;
+    }
+    public Flower getFlower(Integer i){
+        return a[i];
     }
 
     public void addFlower(Flower nw) {
@@ -82,6 +91,7 @@ public class FlowerBucket implements Item {
         }
         return tmpPart;
     }
+
 
     public ArrayList<Flower> getFlower(String type){
 

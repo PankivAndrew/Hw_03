@@ -1,18 +1,21 @@
 package Flowers;
 
+import Enums.FlowerColour;
+import Enums.FlowerType;
+
 /**
  * Created by matt on 10/3/16.
  */
 public class Flower {
 
 
-    protected String color;
+    protected FlowerColour color;
     protected double length;
     protected boolean fresh;
     protected double price;
-    protected String type;
+    protected FlowerType type;
 
-    public Flower(String color, double length, boolean fresh, double price, String type) {
+    public Flower(FlowerColour color, double length, boolean fresh, double price, FlowerType type) {
         this.color = color;
         this.length = length;
         this.fresh = fresh;
@@ -20,7 +23,7 @@ public class Flower {
         this.type = type;
     }
 
-    public String getType() {
+    public FlowerType getType() {
         return type;
     }
     public double getPrice() {
@@ -29,7 +32,7 @@ public class Flower {
     public double getLength() {
         return length;
     }
-    public String getColor() {
+    public FlowerColour getColor() {
         return color;
     }
     public boolean isFresh() {

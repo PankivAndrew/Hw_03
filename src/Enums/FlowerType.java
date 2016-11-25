@@ -4,17 +4,15 @@ package Enums;
  * Created by Pankiv on 18.11.2016.
  */
 public enum FlowerType {
-    ROMASHKA, MAK, ROZA, TULPAN;
+    ASTROMETRY, MAYWEED, CHRYSANTHEMUM;
     public String toString(){
         switch (this){
-            case ROMASHKA:
-                return "Romashka";
-            case MAK:
-                return "Mak";
-            case ROZA:
-                return "Roza";
-            case TULPAN:
-                return "Tulpan";
+            case ASTROMETRY:
+                return "ASTROMETRY";
+            case MAYWEED:
+                return "MAYWEED";
+            case CHRYSANTHEMUM:
+                return "CHRYSANTHEMUM";
             default:
                 return "no type";
         }
